@@ -1,7 +1,7 @@
 
 Amazon Shopping – Add to Cart Automation & Order Amount Validation
 
-📌 Project Overview
+***📌 Project Overview***
 This Selenium automation mini‑project automates the online shopping workflow on Amazon.in.
 The script performs:
 
