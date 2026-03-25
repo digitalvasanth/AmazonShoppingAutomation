@@ -1,11 +1,11 @@
-🛒 Project Title
+
 Amazon Shopping – Add to Cart Automation & Order Amount Validation
 
 📌 Project Overview
 This Selenium automation mini‑project automates the online shopping workflow on Amazon.in.
 The script performs:
 
-Launching browser (Chrome/Edge/Firefox)
+Launching browser (Chrome/Edge)
 Navigating to Amazon
 Searching for the product “Home appliances”
 Selecting the first product
@@ -147,15 +147,4 @@ ExcelUtils
 DriverFactory
 BaseTest
 
-Meaningful error messages logged to console.
 
-🏆 Why This Project is Industry Standard
-✔ Clean folder structure
-✔ Reusable components
-✔ Multi-browser support
-✔ Data driven
-✔ POM framework
-✔ Separation of concerns
-✔ Easy maintenance
-✔ TestNG integration
-✔ Maven dependencies fully automated
