@@ -1,150 +1,68 @@
+# 🛒 Amazon Add-To-Cart Automation Framework
 
-Amazon Shopping – Add to Cart Automation & Order Amount Validation
+A robust Selenium-based automation framework designed for end-to-end testing of the **Amazon.in** shopping experience. This project implements the **Page Object Model (POM)** and **Data-Driven Testing** to ensure high maintainability and scalability.
 
-***📌 Project Overview***
-This Selenium automation mini‑project automates the online shopping workflow on Amazon.in.
-The script performs:
+---
 
-Launching browser (Chrome/Edge)
-Navigating to Amazon
-Searching for the product “Home appliances”
-Selecting the first product
-Adding product to cart
-Reading the order amount
-Adding another item
-Validating the updated cart amount
-Closing the browser
+## 🚀 Project Overview
 
-This project follows Page Object Model (POM), Data‑Driven Testing, Reusable Components, and Multi‑browser Execution as required.
+This automation suite handles the complex UI workflows of Amazon, including:
+* **Product Search:** Dynamic searching via `config.properties`.
+* **Window Handling:** Managing new tabs when opening product details.
+* **Popup Management:** Handling warranty and side-panel overlays using **JavaScript Executor**.
+* **Cart Validation:** Real-time extraction and assertion of cart subtotal values.
 
-🎯 Mini Project Requirements & Implementation
-This project follows all mandatory guidelines:
-✔ Multi‑browser Support
-Supports Chrome, Edge, Firefox using WebDriverManager.
-✔ Data‑Driven
-Input “Home appliances” read via:
+## 🛠️ Tech Stack
 
-testdata.xlsx (Apache POI)
-config.properties
+| Component | Technology |
+| :--- | :--- |
+| **Language** | Java 8+ |
+| **Automation** | Selenium WebDriver |
+| **Test Framework** | TestNG |
+| **Build Tool** | Maven |
+| **Data Handling** | Apache POI (Excel) |
+| **Driver Management** | WebDriverManager |
+| **Utilities** | JavaScript Executor & WebDriverWait |
 
-✔ POM (Page Object Model)
-Pages implemented:
+---
 
-HomePage.java
-ProductPage.java
-CartPage.java
+## 📂 Project Structure
 
-✔ Reusable Methods
+```text
+AmazonCartAutomation/
+├── src/main/java/
+│   ├── base/           # DriverSetup.java (Initialization & Teardown)
+│   ├── page/           # Page Objects (HomePage, ProductPage, CartPage)
+│   └── utils/          # ExcelUtils.java (Data-Driven Logic)
+├── src/test/java/
+│   └── testcases/      # Test Scripts (MainTest, TC_AmazonCartTest)
+├── resources/          
+│   ├── config.properties # Environment Configurations
+│   └── testng.xml       # Test Suite Execution
+└── test-output/        # Generated Test Reports
 
-Browser init → DriverFactory.java
-Launch & teardown → BaseTest.java
-Excel reading → ExcelUtils.java
-
-✔ Synchronization
-Thread waits used (can be replaced with WebDriverWait).
-✔ Exception Handling
-Try–catch used in utilities.
-✔ ID/Name Locators
-Avoided XPath where possible (Amazon supports ID for search & cart).
-✔ Relative Paths
-All files use relative paths like:
-src/main/resources/config.properties
-
-✔ Test Results
-Results printed to console output.
-
-🏗️ Tech Stack
-
-Programming Language: Java
-Automation Tool: Selenium WebDriver
-Testing Framework: TestNG
-Build Tool: Maven
-Browser Driver Management: WebDriverManager
-Data‑Driven Library: Apache POI
-Framework Design: Page Object Model (POM)
-Configuration Management: Properties File
-Development Environment: Eclipse IDE
-
-
-
-📁 Project Structure
-AmazonAutomation/
- ├── pom.xml
- ├── src
- │   ├── main
- │   │    ├── java
- │   │    │    ├── base
- │   │    │    │     BaseTest.java
- │   │    │    │     DriverFactory.java
- │   │    │    ├── pages
- │   │    │    │     HomePage.java
- │   │    │    │     ProductPage.java
- │   │    │    │     CartPage.java
- │   │    │    └── utils
- │   │    │          ExcelUtils.java
- │   │    └── resources
- │   │         config.properties
- │   │         testdata.xlsx
- │   └── test
- │        ├── java
- │        │      └── testcases
- │        │            TC_AmazonCartTest.java
- │        └── resources
- │               testng.xml
- └── README.md
-
-
-⚙️ Configuration Settings
-config.properties
-browser=chrome
-url=https://www.amazon.in/
-searchItem=Home appliances
-
-Change browser to edge or firefox anytime.
-
-📊 Excel Input (testdata.xlsx)
-SearchItem
-Home appliances
-
-
-
-▶️ How to Run the Automation
-Method 1: Run through testng.xml (Recommended)
-
-Right‑click testng.xml
-Click Run As → TestNG Suite
-
-
-Method 2: Run the test directly
-Right‑click:
-TC_AmazonCartTest.java → Run As → TestNG Test
-
-
-Method 3: Run using Maven
+```
+**🏃 How to Run**
+**1. Using Maven (Command Line)**
+Bash
 mvn clean test
+**2. Using TestNG XML**
+Right-click src/test/resources/testng.xml and select Run as TestNG Suite.
 
+**📊 Test Reporting**
+Comprehensive execution reports are automatically generated after every run in the test-output/ directory:
 
-🔍 Validation Logic
-After adding the second item:
-updatedAmount >= firstAmount
+index.html - Full interactive report.
 
-If increased → Test PASS
-Else → Test FAIL
+emailable-report.html - Summary report for stakeholders.
 
-🤖 Used Design Patterns
+**📋 Prerequisites**
+**Java:** JDK 8 or higher
 
-Page Object Model (POM)
-Data‑Driven Framework
-Factory Pattern (DriverFactory)
-Configuration Management
-TestNG Annotations
+**Build Tool:** Maven 3.6+
 
+**IDE:** IntelliJ IDEA or Eclipse
 
-🛡️ Exception Handling
-Handled in:
-
-ExcelUtils
-DriverFactory
-BaseTest
+Browser: Latest version of Chrome/Firefox/Edge
 
 
