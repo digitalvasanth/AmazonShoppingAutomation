@@ -35,7 +35,7 @@ AmazonCartAutomation/
 │   ├── page/           # Page Objects (HomePage, ProductPage, CartPage)
 │   └── utils/          # ExcelUtils.java (Data-Driven Logic)
 ├── src/test/java/
-│   └── testcases/      # Test Scripts (MainTest, TC_AmazonCartTest)
+│   └── testcases/      # Test Scripts (MainTest file with TestNG Annotations)
 ├── resources/          
 │   ├── config.properties # Environment Configurations
 │   └── testng.xml       # Test Suite Execution
